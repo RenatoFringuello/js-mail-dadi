@@ -1,25 +1,22 @@
 // gioco dei dadi
-        // creo un array con i valori del dado
-const dado = [1,2,3,4,5,6];
-
 let user, com, result, nMatch = 10;
 
     // crea 10 match
 for (let i = 0; i < nMatch; i++) {
     // genero una giocata random per ogni giocatore
-    user = Math.floor(Math.random() * dado.length);
-    com = Math.floor(Math.random() * dado.length);
+    user = Math.floor(Math.random() * 6 + 1);
+    com = Math.floor(Math.random() * 6 + 1);
     
     // verifico il vincitore o il pareggio
-    if(dado[user] > dado[com]){
+    if(user > com){
         result = 'user win ';
-    }else if(dado[user] < dado[com]){
+    }else if(user < com){
         result = 'com win ';
     }else{
         result = 'equal ';
     }
     // output dell'esito
-    console.log(result, dado[user], dado[com]);
+    console.log(result, user, com);
 }
 
 // mail check
