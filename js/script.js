@@ -37,8 +37,7 @@ const checkEMail = document.querySelector('.form button');
 const response = document.getElementById('response');
 
 checkEMail.addEventListener('click', function(){
-    // riciclo le variabili result e user che tanto non ha più uno scopo
-    result = "utente non trovato";
+    // riciclo la variabile user che tanto non ha più uno scopo
     user = users.length;//cosi se non trova nessuno restituisce 'undefined'
 
     // giro tante volte quante sono le email in lista
@@ -46,7 +45,6 @@ checkEMail.addEventListener('click', function(){
         // verifico che la mail inserita esista fra quelle in lista
         if(userEMail.value === users[i]){
             // tengo conto della posizione
-            result = "Bentornato";
             user = i;
         }
         /**
@@ -55,6 +53,5 @@ checkEMail.addEventListener('click', function(){
          */
     }
     // metto un output dell'esito, della mail inserita, e di quella corrispondente in lista
-    response.innerHTML = (users[user] !== undefined) ? `${result} ${users[user]} ci sono 2345 email da leggere` : result;
-    console.log(result, userEMail.value, users[user]);
+    response.innerHTML = (users[user] !== undefined) ? `Bentornato ${users[user]} ci sono 2345 email da leggere` : "utente non trovato";
 });
